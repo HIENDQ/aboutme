@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlrewrite>
+
+	<rule>
+	<!--  
+	^: bắt đầu 
+	$:kết thúc
+	(.*) => đại diện cho 0 hoặc nhìu kí tự
+	(.+) =>đại diện cho 1 hoặc nhìu kí tự
+	(a-zA-Z) : đại diện cho a->z hoặc A->Z
+	(a-zA-Z_0-9) :đại diện cho a->z hoặc A->Z và các số từ 0->9
+	([0-9]*) :đại diện cho các số từ 0->n
+	([0-9]+) :đại diện cho các số từ 1->n
+	
+	
+	regex
+	-->
+	<!-- /public/newcat?id=2 -->
+		<from>/cat/(.*)-([0-9]+)</from>
+		<to>/public/newcat?id=$2</to>
+	</rule>
+	<rule>
+	<!--detail?id=13  -->
+		<from>/detail/(.*)-([0-9]+)</from>
+		<to>/detail?id=$2</to>
+	</rule>
+</urlrewrite>
